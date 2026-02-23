@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flag Guessing Game</title>
+  <link rel="preload" href="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/World_map_geographical.jpg/640px-World_map_geographical.jpg" as="image">
+  <link rel="stylesheet" href="flag-game.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="map-overlay"></div>
+  <main class="game-container">
+    <header class="game-header hidden" id="game-header">
+      <div class="stat level-stat">
+        <span class="stat-label">Level</span>
+        <span id="level-display">1</span>
+      </div>
+      <div class="stat score-stat">
+        <span class="stat-label">Score</span>
+        <span id="score-display">0</span>
+      </div>
+      <div class="stat timer-stat">
+        <span class="stat-label">Time</span>
+        <span id="timer-display">15</span>
+      </div>
+    </header>
+
+    <section class="game-area hidden" id="game-area">
+      <div class="flag-container">
+        <img id="flag-image" src="" alt="Country flag" class="flag-img">
+      </div>
+      <div class="input-area">
+        <input 
+          type="text" 
+          id="country-input" 
+          placeholder="Enter country name" 
+          autocomplete="off"
+          autofocus
+        >
+        <button type="button" id="submit-btn" class="btn btn-submit">Submit</button>
+      </div>
+      <button type="button" id="hint-btn" class="btn btn-hint">
+        <span class="hint-icon">?</span> Hint
+      </button>
+      <p id="hint-text" class="hint-text hidden"></p>
+      <p id="message" class="message"></p>
+    </section>
+
+    <section class="game-over hidden" id="game-over">
+      <h2>Game Over</h2>
+      <table class="answer-table" id="answer-table">
+        <thead>
+          <tr>
+            <th>Flag</th>
+            <th>Correct Answer</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><img id="game-over-flag" src="" alt="" class="answer-flag"></td>
+            <td id="correct-answer-cell">—</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="final-score">Score: <span id="final-score">0</span></p>
+      <button type="button" id="play-again-btn" class="btn btn-play-again">Play Again</button>
+    </section>
+
+    <section class="start-screen" id="start-screen">
+      <h1>Flag Guesser</h1>
+      <p class="tagline">Identify the flag, type the country</p>
+      <button type="button" id="start-btn" class="btn btn-start">Start Game</button>
+    </section>
+  </main>
+  <script src="flag-game.js"></script>
+</body>
+</html>
